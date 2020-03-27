@@ -1,11 +1,8 @@
 import React from 'react';
+import Routes from "./routes"
+import './index.scss';
 
-function App() {
-    return (
-        <div className="App">
-            oi
-        </div>
-    );
+export default function () {
+    return <Routes/>;
 }
 
-export default App;
