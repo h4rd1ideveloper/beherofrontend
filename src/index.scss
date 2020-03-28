@@ -29,6 +29,16 @@ form input {
   border-radius: 8px;
   padding: 0 24px;
 }
+form textarea {
+  width: 100%;
+  height: 60px;
+  min-height: 140px;
+  color: #333;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  padding: 16px 24px;
+  line-height: 24px;
+}
 
 .button {
   width: 100%;
@@ -48,5 +58,22 @@ form input {
 
   &:hover {
     filter: brightness(80%);
+  }
+}
+
+.backl-ink {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  color: #41414d;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease-in-out;
+  svg{
+    margin-right: 8px;
+  }
+  &:hover{
+    opacity: 0.8;
   }
 }

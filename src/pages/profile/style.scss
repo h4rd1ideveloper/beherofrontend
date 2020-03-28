@@ -1,0 +1,135 @@
+.profile-container {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 30px;
+  margin: 32px auto;
+
+  h1 {
+    margin-top: 80px;
+    margin-bottom: 24px;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+    list-style: none;
+
+    li {
+      background: #FFF;
+      padding: 24px;
+      border-radius: 8px;
+      position: relative;
+
+      button {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        border: 0;
+        background: transparent;
+
+        &:hover {
+
+          opacity: 0.8;
+        }
+      }
+
+      strong {
+        display: block;
+        margin-bottom: 16px;
+        color: #41414d;
+      }
+
+      p + strong {
+        margin-top: 32px;
+      }
+
+      p {
+        color: #737380;
+        line-height: 21px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 20px;
+      margin-left: 24px;
+    }
+
+    img {
+      height: 64px;
+    }
+
+    a {
+      width: 260px;
+      margin-left: auto;
+      margin-top: 0;
+    }
+
+    button {
+      height: 60px;
+      width: 60px;
+      border-radius: 4px;
+      border: 1px solid #dcdce6;
+      background: transparent;
+      margin-left: 16px;
+      transition: border-color 0.2s ease-in-out;
+
+      &:hover {
+        border-color: #999;
+      }
+    }
+  }
+}
+
+.new-incident-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    width: 100%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    section {
+      width: 100%;
+      max-width: 380px;
+
+      h1 {
+        margin: 64px 0 32px;
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 18px;
+        color: #737380;
+        line-height: 32px;
+      }
+    }
+
+    form {
+      width: 100%;
+      max-width: 450px;
+
+      input, textarea {
+        margin-top: 10px;
+        resize: vertical;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Logon from "./pages/authentication"
+import {Logon, Register, Profile, Incidents} from "./pages/index"
 import {
     BrowserRouter,
     Switch,
@@ -10,7 +10,10 @@ export default function () {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path={'/'} component={Logon}/>
+                <Route path={'/'} exact component={Logon}/>
+                <Route path={'/register'} component={Register}/>
+                <Route path={'/profile'} component={Profile}/>
+                <Route path={'/incidents/new'} component={Incidents}/>
             </Switch>
         </BrowserRouter>
     );
