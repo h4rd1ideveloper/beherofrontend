@@ -4,7 +4,7 @@ import cliente from "./../../../clientHttp"
 import herosImg from '../../../assets/heroes.png'
 import logoImg from '../../../assets/logo.svg'
 import '../style.scss'
-import {FiLogIn} from "react-icons/fi"
+import {FiLogIn, FiAward} from "react-icons/fi"
 import FeedBack from "../../../assets/FeedBack";
 
 export default function ({children, ...props}) {
@@ -57,6 +57,10 @@ export default function ({children, ...props}) {
                     <Link to={'/register'} className={"backl-ink"}>
                         <FiLogIn size={16} color={'#E02041'}/>
                         Não tenho cadastro
+                    </Link>
+                    <Link to={'/'} className={"backl-ink"}>
+                        <FiAward size={16} color={'#E02041'}/>
+                        Conhecer ONGs cadastradas
                     </Link>
                 </form>
             </section>

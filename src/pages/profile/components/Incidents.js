@@ -5,15 +5,15 @@ import {FiArrowLeft} from 'react-icons/fi'
 import '../style.scss'
 import clientHttp from "../../../clientHttp";
 import FeedBack from "../../../assets/FeedBack";
-import {onChangeMoney,reaisMask} from "./../../../assets/functions";
+import {onChangeMoney, reaisMask} from "./../../../assets/functions";
+
 export default function () {
     const [state, setState] = useState({});
     let history = useHistory();
     const location = useLocation();
     useEffect(() => {
-        // alert(JSON.stringify(location));
         if (!location.id || !location.name) {
-            history.push('/')
+            history.push('/logon')
         } else {
             setState({ong_id: location.id, name: location.name})
         }

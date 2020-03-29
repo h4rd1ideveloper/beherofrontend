@@ -24,12 +24,12 @@ export default function () {
                 icon: 'error',
                 title: `Oops... sentimos muito, mas algo deu errado`
             });
-            history.push('/');
+            history.push('/logon');
         }
     };
     useEffect(() => {
         if (!location.state) {
-            history.push('/');
+            history.push('/logon');
         } else {
             fetchData();
         }
@@ -40,10 +40,10 @@ export default function () {
             <header>
                 <img src={logoImg} alt="Be The Hero"/>
                 <span>Bem Vinda, {name}</span>
-                <Link to={{pathname: "/incidents/new", id,name}} className={"button"}>
+                <Link to={{pathname: "/incidents/new", id, name}} className={"button"}>
                     Cadastrar novo caso
                 </Link>
-                <button type={"button"} onClick={() => history.push('/')}>
+                <button type={"button"} onClick={() => history.push('/logon')}>
                     <FiPower size={18} color={"#E02041"}/>
                 </button>
             </header>

@@ -22,7 +22,7 @@ export default function () {
                 title: ` ONG cadastrada com sucesso, seu ID ${id}`
             });
             history.push({
-                pathname: '/',
+                pathname: '/logon',
                 state: {id}
             });
         } catch (e) {
@@ -47,7 +47,7 @@ export default function () {
                     <img src={logoImg} alt={'Be The Hero'}/>
                     <h1>Cadastro</h1>
                     <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG.</p>
-                    <Link to={'/'} className={"backl-ink"}>
+                    <Link to={'/logon'} className={"backl-ink"}>
                         <FiArrowLeft size={16} color={'#E02041'}/>
                         Logon
                     </Link>
