@@ -1,68 +1,162 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🦸‍♂️ Be The Hero - Frontend
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-In the project directory, you can run:
+Interface web para o projeto "Be The Hero", uma plataforma que conecta ONGs a pessoas dispostas a ajudar em casos específicos. Este frontend fornece uma experiência de usuário intuitiva para cadastro de ONGs, gerenciamento de casos e comunicação entre doadores e organizações.
 
-### `yarn start`
+## 🚀 Funcionalidades
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Cadastro de ONGs**: Interface para registro de novas organizações
+- **Login/Logout**: Sistema de autenticação para ONGs
+- **Dashboard**: Painel de controle para gerenciamento de casos
+- **Cadastro de Casos**: Formulário para adicionar novos casos de ajuda
+- **Listagem de Casos**: Visualização de todos os casos disponíveis
+- **Contato**: Facilita a comunicação entre doadores e ONGs via WhatsApp e e-mail
+- **Design Responsivo**: Interface adaptável para dispositivos móveis e desktop
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 🛠️ Tecnologias
 
-### `yarn test`
+- **Framework**: React.js
+- **Roteamento**: React Router DOM
+- **Estilização**: Node-SASS (SCSS)
+- **Requisições HTTP**: Axios
+- **Ícones**: React Icons
+- **Máscaras de Input**: React Input Mask
+- **Alertas**: SweetAlert2
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📋 Pré-requisitos
 
-### `yarn build`
+- Node.js v10+ instalado
+- NPM ou Yarn
+- API Backend [Be The Hero](https://github.com/h4rd1ideveloper/beherobackend) em execução
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔧 Instalação e Configuração
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/h4rd1ideveloper/beherofrontend.git
+   cd beherofrontend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-### `yarn eject`
+3. Configure a conexão com o backend:
+   - Abra o arquivo `src/services/api.js`
+   - Verifique se a URL base está apontando para o endereço correto do backend
+   ```javascript
+   // Exemplo
+   import axios from 'axios';
+   
+   const api = axios.create({
+     baseURL: 'http://localhost:3333',
+   });
+   
+   export default api;
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Inicie a aplicação:
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A aplicação estará disponível em `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📚 Estrutura do Projeto
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+src/
+├── assets/       # Imagens e recursos estáticos
+├── components/   # Componentes reutilizáveis
+├── pages/        # Páginas da aplicação
+│   ├── Logon/    # Página de login
+│   ├── Register/ # Cadastro de ONGs
+│   ├── Profile/  # Dashboard da ONG
+│   └── NewIncident/ # Cadastro de novos casos
+├── services/     # Configuração de serviços (API)
+├── styles/       # Estilos globais
+└── routes.js     # Configuração de rotas
+```
 
-## Learn More
+## 🖥️ Páginas Principais
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Logon
+Página inicial onde ONGs podem acessar suas contas usando o ID fornecido durante o cadastro.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Cadastro
+Formulário para registro de novas ONGs, coletando informações como nome, e-mail, WhatsApp, cidade e estado.
 
-### Code Splitting
+### Perfil
+Dashboard da ONG onde é possível visualizar, cadastrar e excluir casos.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Novo Caso
+Formulário para cadastro de novos casos, incluindo título, descrição e valor necessário.
 
-### Analyzing the Bundle Size
+## 🔄 Integração com Backend
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Este frontend foi projetado para trabalhar em conjunto com o projeto [BeHeroBackend](https://github.com/h4rd1ideveloper/beherobackend), que fornece a API necessária para todas as operações.
 
-### Making a Progressive Web App
+### Principais Endpoints Utilizados
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- `POST /sessions`: Autenticação da ONG
+- `POST /ongs`: Cadastro de nova ONG
+- `GET /profile`: Listagem de casos da ONG logada
+- `POST /incidents`: Cadastro de novo caso
+- `DELETE /incidents/:id`: Remoção de caso
 
-### Advanced Configuration
+## 🧪 Testes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Para executar os testes (quando implementados):
 
-### Deployment
+```bash
+npm test
+# ou
+yarn test
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## 📦 Build para Produção
 
-### `yarn build` fails to minify
+Para gerar uma versão de produção otimizada:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```bash
+npm run build
+# ou
+yarn build
+```
+
+Os arquivos serão gerados na pasta `build/`, prontos para serem implantados em qualquer servidor web estático.
+
+## 📱 Responsividade
+
+A aplicação foi desenvolvida seguindo o conceito de Mobile First, garantindo uma experiência consistente em diferentes tamanhos de tela:
+
+- **Desktop**: Layout completo com todas as funcionalidades
+- **Tablet**: Adaptações para melhor visualização em telas médias
+- **Mobile**: Interface otimizada para smartphones
+
+## 🔒 Segurança
+
+- Validação de formulários para prevenir entradas inválidas
+- Armazenamento seguro do ID da ONG em localStorage
+- Proteção de rotas privadas
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença ISC - veja o arquivo LICENSE para detalhes.
+
+## 👨‍💻 Autor
+
+Desenvolvido por [Yan Policarpo](https://github.com/h4rd1ideveloper).
+
+---
+
+⭐ Se este projeto foi útil para você, considere dar uma estrela no GitHub!
